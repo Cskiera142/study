@@ -1,0 +1,124 @@
+1. Explain the event-driven, non-blocking I/O model in Node.js. How does it contribute to its scalability?
+   -Event-Driven means events, either by the user or system events, trigger the execution of the code.
+   -Non-Blocking I/O means the application doesn't wait for the inputs/outputs to finish executing before moving on to the next task. This allows for multiple concurrent operations to be executed together to lower latency and increase scalability because of the large number of operations it can handle at the same time.
+   //////
+   //////
+2. What is the purpose of the package.json file in a Node.js project, and what key information does it contain?
+   -The package.json file in a Node.js project is a JSON-formatted configuration file that specifies project metadata, dependencies, scripts, and other essential information for managing and running the project.
+   //////
+   //////
+3. What is a callback function in Node.js, and why is it commonly used?
+   -A callback in Node.js is specifically a function passed as an argument that is executed once a specified asynchronous operation finishes.
+   //////
+   //////
+4. What is the role of the Event Loop in Node.js, and how does it work?
+   -The Event Loop is what makes Node.js what it is. By using Asynchronous operations, it allows Node to load less taxing operations first, while larger operations are given time to finish to improve overall efficency.
+   //////
+   //////
+5. What is the purpose of the require function in Node.js, and how do you use it to include external modules?
+   -Modularization: It allows for breaking up of the application into smaller, reusable modules. The 'require' function then allows you to load these modules where you need them to help with maintaining a cleaner code base. It is also used to import external dependencies into the application.
+   //////
+   //////
+6. What are Promises in Node.js, and how do they help in managing asynchronous operations?
+   -A Promise is an object representing the eventual completion or failure of an asynchronous operation. It provides a standardized way to work with asynchronous code by encapsulating the result/error of that operation. It is broken into three steps:
+   -Pending: Intial state before completetion.
+   -Fulfilled: Operation resolved successfully.
+   -Rejected: Operation failed.
+   //////
+   //////
+7. What are async/await in Node.js, and how do they simplify working with asynchronous code?
+   -It is a way to make writing code for Promises more simplified and managable, removing the need for the .then() function and streamlining the readability of the codebase.
+   //////
+   //////
+8. Explain the concept of streams in Node.js. What are the advantages of using streams?
+   - Streams utilize the asyncronous nature of Node.js that allows for splitting data into chunks, rather than loading it all into memory at once, allowing for handling of large amounts of data efficently. There are several types of streams:
+     -Readable: reads data from a source i.e. a file, network connection, or user input.
+     -Writable: Write data to a specified destination i.e. a file or send data over a network.
+     -Duplex: bidirectional and can read and write. Used for network sockets.
+     -Transform: Transform streams are a type of duplex stream that allows data to be transformed as it is read from a source and written to a destination.
+     //////
+     //////
+9. What is the role of the Buffer class in Node.js, and how is it different from regular JavaScript arrays?
+   -The Buffer class in Node.js is a built-in module that provides a way to work with binary data directly in memory, without the need for JavaScript arrays or the ArrayBuffer object found in browsers
+   -Binary vs. Text: Buffers are designed for binary data, whereas JavaScript arrays are typically used for storing and manipulating text and other JavaScript objects.
+   //////
+   //////
+10. What is the purpose of the process object in Node.js, and how can you access command-line arguments and environment variables using it?
+    -The process object in Node.js is a tool for interacting with and controlling the runtime environment of your Node.js application. You can access command-line arguments through process.argv and environment variables through process.env, making it easy to customize and configure your Node.js applications for different scenarios.
+    //////
+    //////
+11. How can you handle errors in Node.js applications? Discuss error handling best practices.
+    -try/catch blocks are used to handle errors. There are several different ways to implement them i.e. throw(), then(), use(), with the end goal being to present the programmer with a findable error in the codebase when a function or operation fails.
+    //////
+    //////
+12. How do you perform unit testing in a Node.js application? Name some popular testing frameworks for Node.js.
+    -Unit testing in a Node.js application involves testing individual units or components of your code in isolation to ensure they work as expected. You create a test directory and files. You then 'describe' the module being tested, and then the 'it' or 'test' operations is used to describe what should happen during the test.
+    -Mocha, Jest, Jasmine, and AVA are several of the more popular unit testing packages.
+    //////
+    //////
+13. What is the purpose of the util module in Node.js, and what are some of its commonly used functions?
+    -The util module provides a collection of utility functions that are useful for various purposes in JavaScript and Node.js development. It serves as a toolbox for common programming tasks and includes functions for working with objects, functions, and other data types. Common functions include:
+    -util.inherits(constructor, superConstructor) Allows one constructor to inherit the prototype methods of another constructor.
+    -util.promisify(original) Converts a callback-style function that uses error-first callbacks into a function that returns a Promise.
+    -util.deprecate(function, warning): Marks a function as deprecated and logs a warning message when the function is called.
+    //////
+    //////
+14. Microservice Architecture: Understand the fundamental principles and characteristics of microservices. Learn about the concept of decomposition, service boundaries, and the benefits and challenges of adopting a microservices architecture.
+    -Microservice Architecture is the process of building an application or website in in seperate parts, before bring them together to form one cohesive product. This Allows for using different languages, technologies, frameworks, and versions of software to build out distict parts that are more adapted to those technologies to optimize the overall product. This process is called decompisition, in which we break down a 'monolithic'(fully contained product) into smaller, reusabale parts.
+    //////
+    //////
+15. Service Design and Boundaries: Learn how to identify and define service boundaries effectively. Understand the principles of domain-driven design (DDD), bounded contexts, and the single responsibility principle (SRP) to design cohesive and loosely coupled services.
+    -Service Design is the encompassing idea of creating a product that maximizes the user experience by adopting things like ease-of-use, heat mapping for touch points, and overall flow to the user experience.
+    -Boundries defines the idea of isolating different parts of that experience, i.e. the landing page, the shopping cart, the checkout page, etc.
+    -Domain-Driven Design (DDD): Domain-Driven Design is a software design approach that emphasizes the importance of understanding and modeling the core business domain. It involves breaking down complex business problems into smaller, manageable components and using a common language to communicate between technical and non-technical team members.
+    -Bounded Context is implementing specific core concepts and rules to specific parts of the product or model. It allows for defining the function of individual parts, while allowing flexibility of variation between rule sets.
+    -SRP is the ideology that each part of the application is built for one specific purpose, thus allowing for targeted changes that won't effect the rest of the app.
+    //////
+    //////
+16. Service Communication and APIs: Explore different patterns and protocols for inter-service communication in a microservices architecture. Study technologies like REST, message queues, publish/subscribe, and event-driven architectures. Understand how to design and document APIs for your microservices.
+    -APIs are sets of rules and protocols that allow different software applications or components to communicate with each other. They define the methods and data formats that applications can use to request and exchange information. APIs are essential for enabling communication and integration between microservices.
+    -Message Queues are designed for asycronous handling of messaging by consumers and allows for handling large volumes of messages.
+    -Publish/subscribe (Pub/Sub) is a messaging pattern where publishers send messages to topics, and subscribers express interest in specific topics. Subscribers receive messages related to the topics they have subscribed to.
+    -Event-driven architectures are a design approach where components or services communicate by producing and consuming events. Events represent significant occurrences or changes in a system and can trigger actions in other parts of the system.
+    //////
+    //////
+17. Service Discovery and Registry: Learn about service discovery mechanisms that enable dynamic service registration and discovery in a distributed system. Study tools and technologies like service registries, service mesh, and API gateways.
+    -Service discovery is a mechanism that allows components or services in a distributed system to locate and communicate with each other dynamically without the need to hardcode specific endpoints.
+    -A service registry is a central database or directory where services in a distributed system can register their network location (IP address and port) and other metadata. It acts as a catalog of available services. Clients can query the service registry to discover and locate services they need to interact with, making it easier to manage and scale the system.
+    - Service mesh is a dedicated infrastructure layer for managing service-to-service communication within a microservices architecture. It provides features such as service discovery, load balancing, security, and monitoring. Service mesh components, called sidecars, are often deployed alongside each service instance to facilitate communication and enforce policies.
+      -An API gateway is a server or software component that acts as a reverse proxy for APIs (Application Programming Interfaces). It sits between clients and the backend services and serves as a single entry point for API requests. API gateways can perform various tasks, including authentication, rate limiting, routing, and request/response transformation. They can also help with service discovery by routing requests to the appropriate services.
+      //////
+      //////
+18. Service Orchestration and Choreography: Understand different approaches to coordinating and integrating microservices. Study patterns like choreography (event-driven) and orchestration (centralized control) to manage service interactions and business workflows.
+    //////
+    //////
+19. Resilience and Fault Tolerance: Explore strategies for building resilient microservices that can handle failures and recover gracefully. Study techniques like circuit breakers, retries, timeouts, and bulkheads to enhance the fault tolerance of your services.
+    //////
+    //////
+20. Scalability and Performance: Learn how to scale individual microservices and the system as a whole. Study techniques like horizontal scaling, load balancing, caching, and performance optimization to ensure the responsiveness and scalability of your microservices.
+    //////
+    //////
+21. Data Management: Explore different approaches to data management in a microservices architecture. Study concepts like database per service, data replication, eventual consistency, and polyglot persistence. Understand how to handle data consistency and transactions across multiple services.
+    //////
+    //////
+22. Security and Authentication: Learn about security considerations in a microservices architecture. Study authentication, authorization, and secure communication between services. Understand how to implement security measures like JWT, OAuth, and role-based access control (RBAC) in a distributed system.
+    //////
+    //////
+23. DevOps and Deployment: Understand the challenges and best practices of deploying and managing microservices in a production environment. Study containerization technologies like Docker, container orchestration with Kubernetes, and deployment strategies like blue/green or canary deployments.
+    //////
+    //////
+24. Testing and Quality Assurance: Explore testing strategies and techniques specific to microservices. Study approaches like unit testing, integration testing, contract testing, and end-to-end testing in a distributed system. Understand how to ensure the quality and reliability of your microservices.
+    //////
+    //////
+25. Observability and Monitoring: Learn how to monitor and debug your microservices effectively. Study logging, distributed tracing, metrics, and monitoring tools to gain visibility into the performance, health, and behavior of your services.
+    //////
+    //////
+26. Continuous Integration and Deployment (CI/CD): Explore CI/CD practices and tools for building, testing, and deploying microservices. Study techniques like pipeline automation, versioning, and rolling updates to ensure a smooth and efficient development and deployment process.
+    //////
+    //////
+27. Service Governance and Management: Understand the challenges of managing a large number of microservices in production. Study topics like service discovery, service catalog, service-level agreements (SLAs), and service monitoring to effectively manage and govern your microservices.
+    //////
+    //////
+28. Organizational and Cultural Considerations: Recognize the organizational and cultural changes required to adopt a microservices architecture. Understand the importance of cross-functional teams, autonomy, communication, and continuous learning to foster a culture of microservices development.
+    //////
+    //////
